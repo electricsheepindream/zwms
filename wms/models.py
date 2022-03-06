@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -31,6 +32,7 @@ class StorageItem(models.Model):
     num = models.FloatField()
     material_cost = models.FloatField()
     gain_way = models.CharField(max_length=8)
+    safe_date = models.IntegerField(max_length=8)
     expiry_date = models.DateTimeField()
     warehouse = models.IntegerField()
 
@@ -57,5 +59,5 @@ class WhPart(BaseModel):
     warehouse = models.ForeignKey(Warehouse, on_delete=models.CASCADE)
 
 
-
-
+# class ItemCreateLog(models.Model):
+#
